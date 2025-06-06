@@ -41,3 +41,16 @@ Line должен получить эти числа откуда-то
 Получить 4 числа (второй конструктор)
 Получить их из внешнего источника (например, Scanner)
  */
+
+
+  /*    //Запуск для выполнения задания
+        Line first = new Line(1, 3, 5 ,8);
+        Line second = new Line(10, 11, 15 ,19);
+        Line third = new Line(first.getEndPoint(), second.getStartPoint());
+        System.out.println("Третья: " + third);
+        third.getStartPoint().setXY(6, 9);
+        third.getEndPoint().setXY(12, 13);
+        System.out.println("Третья теперь: " + third);
+        System.out.println("Сумма длин: " + (first.getLength()+ second.getLength()+ third.getLength()));
+
+   */
