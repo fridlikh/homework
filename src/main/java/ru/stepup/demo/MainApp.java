@@ -1,5 +1,6 @@
 package ru.stepup.demo;
 
+import ru.stepup.HW.OOP.Fraction;
 import ru.stepup.HW.OOP.Line;
 import ru.stepup.HW.OOP.PolyLine;
 import ru.stepup.HW.arrays.*;
@@ -14,18 +15,13 @@ import java.util.Arrays;
 public class MainApp {
     public static void main(String[] args) {
 
-        Point a = new Point(1, 5);
-        Point b = new Point(2, 8);
-        Point c = new Point(5, 3);
+        Fraction f1 = new Fraction(1,3);
+        Fraction f2 = new Fraction(2,5);
+        Fraction f3 = new Fraction(7,8);
+        Fraction result =f1.add(f2).add(f3).subtract(5);
+        System.out.println(result);
 
-        PolyLine line1 = new PolyLine(a, b, c, new Point(8,9)); // для примера 4 точка добавлена иным способом
-        System.out.println("Общая длина ломаной через точки: " + line1.getLength());
-       // System.out.println(line1);
-        System.out.println(line1.getLines());
-        System.out.println("Общая длина ломаной через линии: " + line1.getLengthThroughLines());
-        System.out.println("Оба варианта расчета длины верны? " + (line1.getLength() == line1.getLengthThroughLines()));
-        line1.setPointXY(1, 12,8);
-        System.out.println(line1.getLines());
+
 
     }
 }
