@@ -64,3 +64,11 @@ public class Fraction {
         return a;
     }
 }
+
+/*
+  Fraction f1 = new Fraction(1,3);
+        Fraction f2 = new Fraction(2,5);
+        Fraction f3 = new Fraction(7,8);
+        Fraction result =f1.add(f2).add(f3).subtract(5);
+        System.out.println(result);
+ */
