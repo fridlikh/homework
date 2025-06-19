@@ -1,4 +1,4 @@
-package ru.stepup.demo;
+package ru.stepup.HW.demo;
 import java.util.Scanner;
 
 public class CalcSim {
