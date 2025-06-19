@@ -1,6 +1,6 @@
 package ru.stepup.HW.OOP;
 
-public class Line {
+public class Line implements Measurable{
     Point startPoint;
     Point endPoint;
 
@@ -16,6 +16,7 @@ public class Line {
     public String toString() {
         return "Линия " + "от " + startPoint + " до " + endPoint;
     }
+    @Override
     public double getLength() {
         return Math.sqrt(Math.pow((endPoint.getX() - startPoint.getX()), 2) + Math.pow((endPoint.getY() - startPoint.getY()), 2));
     }

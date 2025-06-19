@@ -38,3 +38,15 @@ public class Student {
                 ;
     }
 }
+
+/*
+        Student s1 = new Student("Олег");
+        Student s2 = new Student("Семён", 5,4,2);
+        System.out.println(s1);
+        System.out.println(s2);
+        s2.addGrade(2);
+        System.out.println(s2);
+        System.out.println(s2.getGrades());
+        s2.addGrade(2);
+        System.out.println(s2.getGrades());
+ */

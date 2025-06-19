@@ -8,19 +8,15 @@ import ru.stepup.HW.сycles.*;
 
 import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
 
-        Student s1 = new Student("Олег");
-        Student s2 = new Student("Семён", 5,4,2);
-        System.out.println(s1);
-        System.out.println(s2);
-        s2.addGrade(2);
-        System.out.println(s2);
-        System.out.println(s2.getGrades());
-        s2.addGrade(2);
-        System.out.println(s2.getGrades());
+        PolyLine polyLine1 = new PolyLine(new Point(1, 5), new Point(2, 8), new Point(5, 3), new Point(8,9));
+        ClosedPolyLine closedPolyLine = new ClosedPolyLine(new Point(2, 7), new Point(4, 9), new Point(1, 6),new Point(8, 5));
 
+
+        Measurable.printAllLengths(polyLine1, closedPolyLine);
     }
 }

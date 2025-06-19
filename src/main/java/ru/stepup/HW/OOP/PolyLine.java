@@ -3,7 +3,7 @@ package ru.stepup.HW.OOP;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PolyLine {
+public class PolyLine implements Measurable{
     private final List<Point> points = new ArrayList<>();
 
     // Конструктор без точек (пустая линия)
@@ -52,6 +52,7 @@ public class PolyLine {
     }
 
     // Возвращает общую длину ломаной линии через точки
+    @Override
     public double getLength() {
         double length = 0.0;
 
@@ -83,10 +84,13 @@ public class PolyLine {
 
         return length;
     }
+    public int getPointCount() { return points.size(); }
+    public Point getPoint(int index) { return points.get(index); }
 
     public String toString() {
-        return "Линия " + points ;
+        return "Ломаная " + points ;
     }
+
 }
 
 /*        Point a = new Point(1, 5);

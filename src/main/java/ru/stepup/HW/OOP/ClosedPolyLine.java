@@ -14,12 +14,11 @@ public class ClosedPolyLine extends PolyLine {
 
     // Метод для замыкания линии (добавляет первую точку в конец, если она ещё не там)
     private void closeLine() {
-        List<Point> points = getPoints(); // Получаем текущие точки
-        if (points.size() >= 2) { // Если точек достаточно для замыкания
-            Point first = points.get(0);
-            Point last = points.get(points.size() - 1);
-            if (!first.equals(last)) { // Если первая и последняя точки не совпадают
-                addPoint(new Point(first.getX(), first.getY())); // Добавляем копию первой точки в конец
+        if (getPointCount() >= 2) { // Используем getPointCount() вместо getPoints()
+            Point first = getPoint(0); // Получаем первую точку
+            Point last = getPoint(getPointCount() - 1); // Получаем последнюю точку
+            if (!first.equals(last)) {
+                super.addPoint(new Point(first.getX(), first.getY()));
             }
         }
     }
@@ -31,25 +30,27 @@ public class ClosedPolyLine extends PolyLine {
         closeLine();           // Проверяем, нужно ли замыкание
     }
 
-    // Переопределяем метод получения длины с учётом замкнутости
     @Override
     public double getLength() {
-        List<Point> points = getPoints();
-        if (points.size() < 2) {
-            return 0.0;
+        // Используем реализацию из PolyLine
+        double length = super.getLength();
+
+        // Добавляем замыкающий отрезок только если линия не замкнута
+        if (getPointCount() >= 2) {
+            Point first = getPoint(0);
+            Point last = getPoint(getPointCount() - 1);
+            if (!first.equals(last)) {
+                length += Math.hypot(first.getX() - last.getX(),
+                        first.getY() - last.getY());
+            }
         }
-        // Добавляем отрезок от последней точки к первой
-        Point first = points.get(0);
-        Point last = points.get(points.size() - 1);
-        double length = super.getLength(); // Берём длину как у обычной линии
-        length += Math.sqrt(Math.pow((first.getX() - last.getX()), 2) +
-                Math.pow((first.getY() - last.getY()), 2));
+
         return length;
     }
 
     // Переопределяем toString для ясности
     @Override
     public String toString() {
-        return "Замкнутая линия " + getPoints();
+        return "Замкнутая ломаная " + getPoints();
     }
 }
