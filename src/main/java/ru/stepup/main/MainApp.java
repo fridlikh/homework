@@ -1,4 +1,4 @@
-package ru.stepup.demo;
+package ru.stepup.main;
 
 import ru.stepup.HW.OOP.geometry.ClosedPolyLine;
 import ru.stepup.HW.OOP.geometry.Measurable;
