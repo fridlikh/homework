@@ -1,4 +1,4 @@
-package ru.stepup.HW.OOP;
+package ru.stepup.HW.OOP.geometry;
 
 public class Point {
     private int x;

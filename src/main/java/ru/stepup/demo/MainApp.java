@@ -1,14 +1,11 @@
 package ru.stepup.demo;
 
-import ru.stepup.HW.OOP.*;
-import ru.stepup.HW.arrays.*;
-import ru.stepup.HW.cases.*;
-import ru.stepup.HW.сycles.*;
+import ru.stepup.HW.OOP.geometry.ClosedPolyLine;
+import ru.stepup.HW.OOP.geometry.Measurable;
+import ru.stepup.HW.OOP.geometry.Point;
+import ru.stepup.HW.OOP.geometry.PolyLine;
 //import java.awt.*;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
-import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {

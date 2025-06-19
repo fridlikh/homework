@@ -1,4 +1,4 @@
-package ru.stepup.HW.OOP;
+package ru.stepup.HW.OOP.math;
 
 public class Fraction {
     private final int numerator;

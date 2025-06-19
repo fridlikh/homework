@@ -1,6 +1,4 @@
-package ru.stepup.HW.OOP;
-
-import java.util.List;
+package ru.stepup.HW.OOP.geometry;
 
 public class ClosedPolyLine extends PolyLine {
     public ClosedPolyLine() {

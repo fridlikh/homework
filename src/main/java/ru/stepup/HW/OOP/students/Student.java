@@ -1,4 +1,4 @@
-package ru.stepup.HW.OOP;
+package ru.stepup.HW.OOP.students;
 
 import java.util.ArrayList;
 import java.util.List;

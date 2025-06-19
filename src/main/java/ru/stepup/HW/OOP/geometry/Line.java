@@ -1,4 +1,4 @@
-package ru.stepup.HW.OOP;
+package ru.stepup.HW.OOP.geometry;
 
 public class Line implements Measurable{
     Point startPoint;
