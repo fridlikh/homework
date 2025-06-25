@@ -1,6 +1,6 @@
 package ru.stepup.HW.OOP.geometry;
 
-public class Point {
+public class Point implements Cloneable {
     private int x;
     private int y;
 
@@ -22,7 +22,32 @@ public class Point {
         this.x = x;
         this.y = y;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Point other = (Point) obj;
+        return x == other.x && y == other.y;
+    }
 
+    @Override
+    public int hashCode() {
+        return 31 * x + y;
+    }
+
+    @Override
+    public Point clone() {
+        try {
+            return (Point) super.clone();
+        } catch (CloneNotSupportedException e) {
+            // Это не должно произойти, так как класс реализует Cloneable
+            throw new AssertionError();
+        }
+    }
     //если делать соут объекта, то тустринг вызывается автоматически дефолтный, а если его прописать, то будет вызываться тот что прописан, как тут
     public String toString() {
         return "{" + x + ";" + y + "}";
