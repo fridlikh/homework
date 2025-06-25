@@ -17,19 +17,18 @@ public class Point implements Cloneable {
     public int getY() {
         return y;
     }
+
     //двойной сеттер для изменения точки
     public void setXY(int x, int y) {
         this.x = x;
         this.y = y;
     }
+
+
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
         Point other = (Point) obj;
         return x == other.x && y == other.y;
     }
