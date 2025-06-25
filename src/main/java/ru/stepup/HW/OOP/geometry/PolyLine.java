@@ -3,11 +3,12 @@ package ru.stepup.HW.OOP.geometry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PolyLine implements Measurable{
+public class PolyLine implements Measurable {
     private final List<Point> points = new ArrayList<>();
 
     // Конструктор без точек (пустая линия)
-    public PolyLine() {}
+    public PolyLine() {
+    }
 
     // Конструктор с любым количеством точек
     public PolyLine(Point... points) { // После того как ты напишешь new PolyLine(p1, p2, p3) - Java АВТОМАТИЧЕСКИ делает следующее: Берёт все переданные точки (p1, p2, p3). Упаковывает их в массив Point[]. Передаёт этот массив в конструктор. То есть внутри конструктора points - это обычный массив типа Point[].
@@ -68,6 +69,7 @@ public class PolyLine implements Measurable{
 
         return length;
     }
+
     // Возвращает общую длину ломаной линии через линии
     public double getLengthThroughLines() {
         if (points.size() < 2) {
@@ -84,11 +86,31 @@ public class PolyLine implements Measurable{
 
         return length;
     }
-    public int getPointCount() { return points.size(); }
-    public Point getPoint(int index) { return points.get(index); }
+
+    public int getPointCount() {
+        return points.size();
+    }
+
+    public Point getPoint(int index) {
+        return points.get(index);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        PolyLine other = (PolyLine) obj; // Приводим obj к типу PolyLine
+        return points.equals(other.points); // Сравниваем списки точек через List.equals()
+    }
+
+    @Override
+    public int hashCode() {
+        return points.hashCode(); // Используем встроенный hashCode() списка
+    }
 
     public String toString() {
-        return "Ломаная " + points ;
+        return "Ломаная " + points;
     }
 
 }
